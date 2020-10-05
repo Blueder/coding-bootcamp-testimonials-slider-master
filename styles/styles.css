@@ -1,0 +1,142 @@
+/* =====================Background Setup================= */
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+
+body {
+    height: 95%;
+    margin-top: 5%;
+    background-image: url(../images/pattern-bg.svg), url(../images/pattern-quotes.svg), url(../images/pattern-curve.svg);
+    background-position: center top, center center, left bottom;
+    background-size: 90%, 20%, 75%;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    text-align: center;
+    font-family: Inter;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(./Inter-VariableFont_slnt\,wght.ttf);
+}
+
+/* ============Profile============= */
+
+#profile {
+    width: 70%;
+    height: auto;
+    margin-top: 10vh;
+    position: relative;
+    z-index: 1;
+    box-shadow: 10px 10px 30px gray;
+}
+
+/* ==========Scroll Buttons=========== */
+
+.scrollButtons {
+    width: 20%;
+    height: 40px;
+    background-color: white;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "leftButton rightButton";
+    border-radius: 30px;
+    position: relative;
+    top: -3%;
+    z-index: 2;
+    box-shadow: 10px 10px 30px grey;;
+
+}
+
+#scrollLeft {
+    background: transparent;
+    border: none !important;
+    grid-area: leftButton;
+    background-image: url(../images/icon-prev.svg);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#scrollRight {
+    background: transparent;
+    border: none !important;
+    grid-area: rightButton;
+    background-image: url(../images/icon-next.svg);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ===========Bottom Texts================= */
+#comment {
+    color: hsl(240, 38%, 20%);
+    font-weight: 400;
+    font-size: 5vw;
+    margin: 5%;
+    line-height: 1.5em;
+}
+
+#name {
+    color: hsl(240, 38%, 20%);
+    font-weight: bold;
+    line-height: 0em;
+}
+
+#occupation {
+    color: hsl(240, 18%, 77%);
+}
+
+/* ===============Port to Desktop================ */
+@media all and (orientation: landscape), (min-width: 800px) {
+    
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-position: 95% 50%, 20% 30%, left bottom;
+        background-size: 90vh, 13vh, 75vh;
+        text-align: left;
+    }
+
+    #profile {
+        margin-top: 14vh;
+        position: absolute;
+        height: 67.5vh;
+        width: auto;
+        right: 10vw;
+        z-index: -1;
+    }
+
+    .scrollButtons {
+        margin: 0;
+        top: calc(83.75vh - 40px);
+        margin-right: 32.5%;
+        margin-left: auto;
+        width: 100px;
+        height: 50px;
+    }
+
+    #comment {
+        width: 50vw;
+        font-size: 4.5vh;
+        margin-left: 10vw;
+        margin-top: 25vh;
+        z-index: 1;
+    }
+
+    #name {
+        display: inline;
+        margin-left: 10vw;
+    }
+    #occupation {
+        display: inline;
+    }
+
+}
